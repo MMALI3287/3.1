@@ -7,30 +7,56 @@ body {
 }
 
 header {
+  position: relative;
   background-image: url("https://images.unsplash.com/photo-1516259762381-22954d7d3ad2");
   background-size: cover;
   background-position: center;
-  height: 400px;
+  height: 100vh;
   display: flex;
-}
-
-header h1 {
-  font-size: 4.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  text-shadow: 10px 10px 0 rgba(0, 0, 0, 0.2);
-  white-space: nowrap;
+  align-items: center;
   justify-content: center;
 }
 
-header p {
-  font-size: 2rem;
-  font-weight: 400;
-  color: #ffffff;
-  text-shadow: 10px 10px 0 rgba(0, 0, 0, 0.2);
-  white-space: nowrap;
-  justify-content: center;
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.containerHeader h1,
+.containerHeader p {
+  text-align: center;
+  color: #ff7300;
+  text-shadow: 1px 1px 5px rgba(255, 255, 0, 0.5),
+    1px 1px 5px rgba(255, 255, 0, 0.5), 1px 1px 5px rgba(255, 255, 0, 0.5),
+    1px 1px 5px rgba(255, 255, 0, 0.5), 1px 1px 5px rgba(255, 255, 0, 0.5),
+    1px 1px 5px rgba(255, 255, 0, 0.5), 1px 1px 5px rgba(255, 255, 0, 0.5),
+    1px 1px 5px rgba(255, 255, 0, 0.5), 1px 1px 5px rgba(255, 255, 0, 0.5),
+    1px 1px 5px rgba(255, 255, 0, 0.5), 1px 1px 5px rgba(255, 255, 0, 0.5),
+    1px 1px 5px rgba(255, 255, 0, 0.5), 1px 1px 5px rgba(255, 255, 0, 0.5),
+    1px 1px 5px rgba(255, 255, 0, 0.5), 1px 1px 5px rgba(255, 255, 0, 0.5),
+    1px 1px 5px rgba(255, 255, 0, 0.5), 1px 1px 5px rgba(255, 255, 0, 0.5),
+    1px 1px 5px rgba(255, 255, 0, 0.5), 1px 1px 5px rgba(255, 255, 0, 0.5);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerHeader h1 {
+  font-size: 7rem;
+  margin-bottom: 2rem;
+}
+
+.containerHeader p {
+  margin-top: 1rem;
+  font-size: 4rem;
+  font-weight: 600;
 }
 
 main {

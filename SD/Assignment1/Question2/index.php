@@ -9,7 +9,7 @@
 
 <body>
     <header>
-        <div class="container">
+        <div class="containerHeader">
             <h1>Prime Numbers Generator</h1>
             <p>Welcome to my prime number generator page</p>
             <p>Simply input a numerical limit to get all the numbers that are prime</p>
@@ -28,13 +28,17 @@
                 </div>
                 <button type="submit">Generate All the Prime Numbers</button>
             </form>
+
             <?php
+            // Function to check if a number is prime
             function is_prime($num)
             {
-                if ($num <= 1) {
+                // Check if the number is less than or equal to 1 or even
+                if ($num <= 1 || $num % 2 == 0) {
                     return false;
                 }
-                for ($i = 2; $i <= sqrt($num); $i++) {
+                // Check if the number is divisible by any prime number from 3 to the square root of the number
+                for ($i = 3; $i <= sqrt($num); $i += 2) {
                     if ($num % $i == 0) {
                         return false;
                     }
@@ -42,13 +46,23 @@
                 return true;
             }
 
+            // Check if the form has been submitted
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $start = $_POST["start"];
                 $end = $_POST["end"];
-
                 echo "<table>";
                 echo "<tr><th>Prime Numbers from $start to $end</th></tr>";
-                for ($i = $start; $i <= $end; $i++) {
+                // Check if the starting number is less than or equal to 2
+                if ($start <= 2) {
+                    echo "<tr><td>2</td></tr>";
+                    $start = 3;
+                }
+                // Check if the starting number is even
+                if ($start % 2 == 0) {
+                    $start++;
+                }
+                // Loop through all odd numbers from the starting number to the ending number
+                for ($i = $start; $i <= $end; $i += 2) {
                     if (is_prime($i)) {
                         echo "<tr><td>$i</td></tr>";
                     }
@@ -56,6 +70,7 @@
                 echo "</table>";
             }
             ?>
+
         </div>
     </main>
     <footer>
