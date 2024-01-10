@@ -7,6 +7,16 @@
   box-sizing: border-box;
 }
 
+.navbar {
+  background-color: #000000;
+  height: 7rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -16,23 +26,45 @@ body {
   font-family: "Comfortaa", cursive;
 }
 
-.logo {
-  font-size: 2rem;
-  margin: 0 5rem 0 4rem;
-}
 .git {
   font-size: 1.5rem;
   margin: 0.5rem 3rem;
-  width: 13rem;
+  width: 15rem;
   height: 4rem;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.git:hover {
+  background: white;
+}
+
+.cont:hover {
+  color: black;
+}
+
+.cont {
+  text-decoration: none;
+  color: white;
+}
+
 #header {
   font-size: 1.5rem;
   width: 100%;
   height: 100vh;
-  background: url(../assets/images/landingback.jpg) no-repeat;
+  background: url(../assets/images/langing.png) no-repeat;
   background-size: cover;
   background-position: center;
+  position: absolute;
+  top: 0;
+}
+
+.abt {
+  margin-top: 100vh;
 }
 
 .header-text {
@@ -57,6 +89,7 @@ body {
 
 .container {
   color: black;
+  padding-top: 3rem;
 }
 
 nav ul li {
@@ -127,8 +160,13 @@ nav ul li a:hover::after {
   padding: 2rem;
 }
 
+.capsule {
+  z-index: -1;
+}
+
 .advantage {
   padding: 6rem;
+  padding-top: 10rem;
   color: azure;
 }
 
@@ -136,8 +174,7 @@ nav ul li a:hover::after {
   color: azure;
   font-size: 3.5rem;
   font-weight: 500;
-  margin-bottom: 5rem;
-  margin-top: 2rem;
+  margin-bottom: 10rem;
   justify-content: center;
   display: flex;
 }
@@ -149,6 +186,7 @@ nav ul li a:hover::after {
 }
 
 .rowc {
+  margin-top: 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -186,7 +224,7 @@ nav ul li a:hover::after {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 18px;
+  font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
   position: relative;
@@ -213,11 +251,12 @@ nav ul li a:hover::after {
   margin: 10px 0;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: 1.1rem;
 }
 
 .tab-contents ul li span {
   color: #b83d64;
-  font-size: 16px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -280,7 +319,8 @@ nav ul li a:hover::after {
 
 /* * portfolio */
 #portfolio {
-  padding: 50px 0;
+  justify-content: center;
+  margin-top: 3rem;
 }
 
 .work-list {
@@ -358,6 +398,8 @@ nav ul li a:hover::after {
   text-decoration: none;
   color: #fff;
   transition: background 0.5s;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .btnc:hover {
@@ -477,14 +519,52 @@ nav .fas {
 
 @media only screen and (max-width: 600px) {
   #header {
-    background-image: url(../images/bg-mobile.jpg);
+    background-image: url(../assets/images/bg-mobile.jpg);
   }
+
+  .navbar {
+    height: 8rem;
+  }
+
+  .git {
+    display: none;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .subheader {
+    font-size: 1.5rem;
+  }
+
+  .sub {
+    font-size: 1rem;
+    color: white;
+  }
+
+  #portfolio {
+    padding: 0 3rem;
+  }
+
+  .capbord {
+    height: 600px;
+  }
+
+  .logo {
+    margin-left: 1rem;
+  }
+
   .header-text {
     margin-top: 100%;
     font-size: 16px;
   }
   .header-text h1 {
     font-size: 30px;
+  }
+
+  .navbar-collapse {
+    background-color: #202429;
   }
 
   h2 {
@@ -494,17 +574,6 @@ nav .fas {
   nav .fas {
     display: block;
     font-size: 25px;
-  }
-  nav ul {
-    background: #ff004f;
-    position: fixed;
-    top: 0;
-    right: -200px;
-    width: 200px;
-    height: 100vh;
-    padding-top: 50px;
-    z-index: 2;
-    transition: right 0.5s;
   }
   nav ul li {
     display: block;
